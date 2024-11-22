@@ -14,19 +14,24 @@
 
     <title>
         {% block title %}
-        WWW.STECH.COM
+        STECH
         {% endblock title %}
     </title>
 </head>
 <body>
+    <body>
     <nav class="navbar shadow" id="navbar">
-        <div class="logo"><a href="http://127.0.0.1:1000/home/" style="text-decoration: none; color: aliceblue;">Code<span style="color:Green; font-weight:bold;">Station</span></a></div>
-        <ul class="nav-links" style="padding: 0 70px;font-weight: 800;font-size: 30px;">
-                <li><a href="http://127.0.0.1:1000/home/">Home</a></li>
-                <li><a href="http://127.0.0.1:1000/Service/">Services</a></li>
-                <li><a href="http://127.0.0.1:1000/About/">About</a></li>
-                <li><a href="http://127.0.0.1:1000/contact/">Contact</a></li>
-                <li><a href="http://127.0.0.1:1000/Login1/">Login</a></li>
+        <div class="logo">
+            <a href="http://127.0.0.1:1000/home/" style="text-decoration: none; color: aliceblue;">
+                Code<span style="color:Green; font-weight:bold;">Station</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="http://127.0.0.1:1000/home/">Home</a></li>
+            <li><a href="http://127.0.0.1:1000/Service/">Services</a></li>
+            <li><a href="http://127.0.0.1:1000/About/">About</a></li>
+            <li><a href="http://127.0.0.1:1000/contact/">Contact</a></li>
+            <li><a href="http://127.0.0.1:1000/Login1/">Login</a></li>
         </ul>
         <div class="burger" onclick="toggleMenu()">
             <div class="line1"></div>
@@ -34,18 +39,19 @@
             <div class="line3"></div>
         </div>
     </nav>
-    
-    
+
     <script>
         const burger = document.querySelector('.burger');
         const navLinks = document.querySelector('.nav-links');
-        
+
         burger.addEventListener('click', () => {
             navLinks.classList.toggle('nav-active');
             burger.classList.toggle('toggle');
         });
 
-        window.onscroll = function() {toggleStickyNavbar()};
+        window.onscroll = function() {
+            toggleStickyNavbar();
+        };
 
         function toggleStickyNavbar() {
             const navbar = document.getElementById("navbar");
@@ -57,228 +63,162 @@
                 navbar.classList.remove("sticky");
             }
         }
-
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
     </script>
-
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Explora&family=Lora:ital,wght@0,400..700;1,400..700&family=Satisfy&display=swap');
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    body {
-        font-family: "Lora";
-    }
-    
-    html {
-        scroll-behavior: smooth;
-    }
-    
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: orange;
-        padding: 1rem;
-        position: fixed;
-        width: 100%;
-        height: 100px;
-        z-index: 1000;
-    }
-    
-    .sticky {
-        position: fixed;
-        top: 0;
-        width: 100%;
-    }
-    
-    .logo {
-        color: white;
-        font-size: 2rem;
-        margin-top: 10px;
-        font-family: "Satisfy", serif;
-        margin-left: 100px;
-    }
-    
+@import url('https://fonts.googleapis.com/css2?family=Explora&family=Lora:ital,wght@0,400..700;1,400..700&family=Satisfy&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lora", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: orange;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    height: 99.9px;
+    z-index: 1000;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.logo {
+    color: white;
+    font-size: 2rem;
+    margin-top: 10px;
+    font-family: "Satisfy", serif;
+    margin-left: 100px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    transition: all 0.5s ease;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+.nav-links li {
+    margin: 0 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    transition: color 0.3s ease;
+    font-family: "Lora";
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: Green;
+}
+
+/* Burger Menu */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 868px) {
     .nav-links {
-        list-style: none;
-        display: flex;
-        transition: all 0.5s ease;
-        margin-left: 100px;
-        margin-top: 10px;
-    }
-    
-    .nav-links li {
-        margin: 0 2rem;
-    }
-    
-    .nav-links a {
-        color:#fff;
-        text-decoration: none;
-        font-size: 1.6rem;
-        text-transform: capitalize;
-        position: relative;
-        transition: color 0.3s ease;
-        font-family: "Lora";
-    }
-    
-    .nav-links a::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        display: block;
-        margin-top: 5px;
-        right: 0;
-        background: #fff;
-        transition: width 0.3s ease;
-        -webkit-transition: width 0.3s ease;
-    }
-    
-    .nav-links a:hover {
-        color: Green;
-    }
-    
-    .nav-links a:hover::after {
-        width: 100%;
-        left: 0;
-        background: green;
-    }
-    
-    .burger {
         display: none;
-        cursor: pointer;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        animation: slideDown 0.5s forwards;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
     }
-    
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .burger {
+        display: block;
+        margin-right: 20px;
+    }
+
+    .nav-active {
+        display: flex;
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .line2 {
+        opacity: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 1.2rem;
+        margin-left: 10px;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
     .burger div {
-        width: 25px;
-        height: 3px;
-        background-color: #fff;
-        margin: 5px;
-        transition: all 0.3s ease;
+        width: 20px;
+        height: 2px;
     }
-    
-    /* Media Queries */
-    
-    @media screen and (max-width: 1024px) {
-        .nav-links {
-            font-size: 1rem;
-        }
-    
-        .nav-links {
-            text-align: center;
-        }
+}
+
+/* Animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
-    
-    @media screen and (max-width: 868px) {
-        .nav-links {
-            display: none;
-            position: absolute;
-            left: 30px;
-            top: 60px;
-            background-color: rgba(58, 53, 53, 0.9);
-            backdrop-filter: blur(3px);
-            width: 100%;
-            flex-direction: column;
-            text-align: center;
-            margin-top: -100px;
-            animation: slideDown 0.9s forwards;
-            border-bottom-left-radius: 90px;
-            border-bottom-right-radius: 90px;
-            height: 1000px;
-        }
-    
-        .nav-links li {
-            margin: 1rem 0;
-            margin-top: 100px;
-        }
-    
-        .burger {
-            display: block;
-        }
-    
-        .nav-active {
-            display: flex;
-            animation: slideDown 0.5s forwards;
-        }
-    
-        .toggle .line1 {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-    
-        .toggle .line2 {
-            opacity: 0;
-        }
-    
-        .toggle .line3 {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    
-    @media screen and (max-width: 480px) {
-        .logo {
-            font-size: 1rem;
-            margin-left: -30px;
-        }
-    
-        .nav-links a {
-            font-size: 1rem;
-        }
-    }
-    
-    /* Slide down animation */
-    @keyframes slideDown {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    .info h1{
-    margin-top: 500px;
-    position: absolute;
-    
-    
-    
-    
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+}
     
     </style>
     
@@ -363,7 +303,7 @@
 </div>
 <style>
 .Banner2 {
-    width: 100%;
+    width: 2100px;
     height: 700px;
     background: linear-gradient(to bottom, rgba(207, 178, 9, 0.3), rgb(9, 182, 159));
 
@@ -910,7 +850,7 @@ background: #ffe15e;;
 </div>
 <style>
 .skillset {
-    width: 100%;
+    width: 2100px;
     max-width: 2112px;
     background: rgb(5, 175, 119);
     margin: 10px auto;
@@ -1047,7 +987,7 @@ background: #ffe15e;;
 
 svg{
 margin-top: -10px;
-
+width: 2100px;
 }
 
 </style>
@@ -1395,7 +1335,7 @@ margin-top: -10px;
 
 <style>
 .WebDev3 {
-    width: 100%;
+    width: 2100px;
     max-width: 2110px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1469,8 +1409,9 @@ margin-top: -10px;
     margin-bottom: 20px;
     line-height: 1.5;
     font-size: 25px;
-    margin-left: -300px;
-    color: black;        
+    margin-left: -250px;
+    color: black;  
+    text-align: center;      
     
 }
 
@@ -2027,7 +1968,7 @@ margin-top: -10px;
 section {
     position: relative;
     min-height: 100vh;
-    width: 100%;
+    width: 2100px;
     background-color: rgb(5, 175, 119);
     overflow: hidden;
     padding: 20px;
@@ -2330,6 +2271,7 @@ footer {
     padding: 40px 5%;
     color: black;
     margin-top:00px;
+    width: 2100px;
 }
 
 .footer-col {
