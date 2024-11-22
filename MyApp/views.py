@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponse,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 from MyApp.models import Contact
@@ -13,37 +14,45 @@ def Home(request):
 def Pro(request):
     return render(request,"pro.html")
 
+@login_required(login_url='Login')
 def Ecom(request):
     return render(request,"Ecom.html")
 
+@login_required(login_url='Login')
 def App(request):
     return render(request,"App.html")
 
 def Service(request):
     return render(request,"Service.html")
 
+@login_required(login_url='Login')
 def Ecom(request):
     return render(request,"Ecom.html")
 
+@login_required(login_url='Login')
 def webd(request):
     return render(request,"Webd.html")
 
+@login_required(login_url='Login')
 def Host(request):
     return render(request,"Host.html")
 
+@login_required(login_url='Login')
 def Digital(request):
     return render(request,"Digital.html")
 
+@login_required(login_url='Login')
 def Develop(request):
     return render(request,"Develop.html")
 
+@login_required(login_url='Login')
 def Test(request):
     return render(request,"Test.html")
 
 def About(request):
     return render(request,"About.html")
 
-
+@login_required(login_url='Login')
 @csrf_exempt    
 def contact_view(request):
     if request.method == 'POST':
