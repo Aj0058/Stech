@@ -363,7 +363,7 @@ html {
             </div>
         </div>    
         <div class="card">
-            <img src="{% static 'Images/Hosting.webp' %}">
+            <img src="{% static 'Images/Josssss.jpg' %}">
             <div class="info">
                 <h1>Hosting Domain</h1>
                 <p>Websites are stored – or “hosted” – on a publicly-accessible computer (a server). Some websites require an entire server to themselves.</p>
@@ -452,19 +452,21 @@ html {
 <style>
 
 /* Wrapper for Cards */
+/* Wrapper for Cards */
+/* Wrapper for Cards */
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(4, minmax(400px, 1fr)); /* Dynamically adapt */
-    gap: 70px 50px; /* Increase gap: 50px for rows, 70px for columns */
+    grid-template-columns: repeat(4, 1fr); /* Ensure 4 cards per row */
+    gap: 70px; /* Space between cards */
     padding: 20px;
-    justify-content: center; /* Center-align the grid for aesthetics */
-    margin: 70px auto;
-    max-width: 1200px; /* Restrict container width */
-    margin-top: 50px;
+    justify-content: center;
+    max-width: 1400px; /* Increase overall width to accommodate larger cards */
+    margin: 50px auto; /* Center alignment */
 }
 
 /* Card Styles */
 .card {
+    width: 300px; /* Set a wider fixed width for cards */
     background: black;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -474,6 +476,11 @@ html {
     text-align: center;
     margin: auto;
     box-shadow: rgba(100, 40, 40, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
 }
 
 .card img {
@@ -489,12 +496,13 @@ html {
 .card h1 {
     font-size: 1.5em;
     margin: 10px 0;
-    color: Orange;
+    color: orange;
 }
 
 .card p {
     font-size: 1rem;
     color: white;
+    line-height: 1.5;
 }
 
 .card a {
@@ -505,89 +513,42 @@ html {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .card a:hover {
     background: orange;
+    transform: scale(1.05); /* Slight enlarge on hover */
 }
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
     .wrapper {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust for medium screens */
-        gap: 15px; /* Reduce gap for smaller screens */
-    }
-
-    .Banner2 h2 {
-        font-size: 2.2em;
-    }
-
-    .Banner2 p {
-        font-size: 1em;
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row for tablets */
     }
 }
 
 @media (max-width: 768px) {
-    nav.navbar ul {
-        flex-direction: column;
-        display: none;
-        background: #333;
-        position: absolute;
-        top: 80px;
-        width: 100%;
-        left: 0;
-    }
-
-    nav.navbar ul.nav-active {
-        display: flex;
-    }
-
-    nav.navbar .burger {
-        display: block;
-    }
-
-    .Banner2 h2 {
-        font-size: 2em;
-    }
-
-    .Banner2 p {
-        font-size: 0.9em;
-    }
-
     .wrapper {
-        gap: 10px; /* Further reduce gap for smaller devices */
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row for smaller devices */
     }
 }
 
 @media (max-width: 480px) {
-    nav.navbar ul {
-        font-size: 0.9em;
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr); /* 1 card per row for mobile devices */
     }
-
     .card h1 {
         font-size: 1.2em;
     }
-
     .card p {
-        font-size: 0.8em;
-    }
-
-    .card a {
         font-size: 0.9em;
+    }
+    .card a {
+        font-size: 0.85em;
         padding: 8px 15px;
     }
-
-    .Banner2 h2 {
-        font-size: 1.8em;
-    }
-
-    .Banner2 p {
-        font-size: 0.85em;
-    }
 }
-
-
 </style>    
     
     
